@@ -1,0 +1,77 @@
+body { background: $primary-color; }
+.wrapper--header { width: 100%; }
+
+.header-top {
+  padding: 14px 6.8%;
+  @include flexBox(flex, null, center, null, null, flex-end);
+  background: $header-gradient;
+
+  .social {
+    @include flexBox(flex, null, center, null, null, flex-end);
+    @include flexBasis(25%);
+    &__list {
+      margin-right: 2.5%;
+      
+      &_icon {
+        color: $white;
+        text-indent: -9999px;
+      
+        &::before {
+          @include fontProperty('FontAwesome', 28px);
+          float: left;
+          text-indent: 0;
+        }
+        &--twitter::before { content: '\f081'; }
+        &--facebook::before { content: '\f082'; }
+        &--rss-feed::before { content: '\f143'; }
+      }
+    }
+  }
+  
+  .search {
+    margin-left: .5%;
+    @include flexBasis(20.6%);
+  
+    &__input {
+      width: 91%;
+      padding: 7px 9px;
+      border: none;
+      border-radius: 12px;
+      background-color: $black;
+      @include fontProperty(null, 16px);
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+.header-bottom {
+  padding: 20px 6.5%;
+  @include flexBox(flex, null, flex-end, null, null, space-between);
+
+  .logo__link {
+    color: $white;
+    @include fontProperty(null, 68px);
+    text-shadow: 0 -2px 4px $black;
+  }
+
+  .menu {
+    margin-bottom: 12px;
+    @include flexBox(flex, null, null, null, null, flex-end);
+
+    &__list_item {
+      padding: 9px 18px;
+      color: $menu-text;
+      @include fontProperty(null, 22px, null, 600);
+      @include transition(all .3s ease);
+
+      &:hover,
+      &--active {
+        background-color: $gray-hover;
+        color: $white;
+      }
+    }
+  }
+}

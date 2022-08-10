@@ -1,0 +1,89 @@
+// banner section started here
+.slider {
+  position: relative;
+
+  &__list {
+    display: none;
+    border: 20px solid $black;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__action {
+    width: 96.5%;
+    @include flexBox(flex, null, center, null, null, space-between);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+
+    &_left {
+      padding: 2px 14px;
+      background-color: $gray-hover;
+      color: $white;
+      @include fontProperty(null, 36px);
+      text-indent: -9999px;
+
+      &::before {
+        content: '\f104';
+        @include fontProperty('FontAwesome');
+        float: left;
+        text-indent: 0;
+      }
+    }
+
+    &_right {
+      @extend .slider__action_left;
+
+      &::before {
+        content: '\f105';
+      }
+    }
+  }
+
+  &__select {
+    padding: 4px 14px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    background-color: $black;
+    @include transform(translateX(-50%));
+
+    &_dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin: 6px 2px;
+      background-color: $menu-text;
+      text-indent: -9999px;
+      @include transition(all .3s ease);
+      
+      &--active {
+        position: relative;
+        
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $black;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%, -50%));
+        }
+      }
+
+      &:hover {
+        @extend .slider__select_dot--active;
+      }
+    }
+  }
+}
+// banner section ended here
+// pages section started here
+
+// pages section ended here

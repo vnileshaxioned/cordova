@@ -18,9 +18,9 @@
 }
 
 // vendor prefixes started here
-@mixin flexBasis($property, $value) {
+@mixin flexBasis($value) {
   -ms-flex-preferred-size: $value;
-  #{$property}: $value;
+  flex-basis: $value;
 }
 
 @mixin displayFlex($property, $value) {
