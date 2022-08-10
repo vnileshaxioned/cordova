@@ -85,5 +85,70 @@
 }
 // banner section ended here
 // pages section started here
+.pages {
+  .wrapper {
+    width: 83%;
+    padding: 24px;
+    margin-top: 43px;
+    @include flexBox(flex);
+    background-color: $black;
+  }
 
+  .page {
+    margin-right: 2.3%;
+    color: $white;
+    @include flexBasis(31.7%);
+
+    &__heading {
+      padding: 12px 20px;
+      background: $header-gradient;
+      @include fontProperty(null, 26px, null, 700);
+    }
+
+    &__content {
+      padding: 20px;
+      background-color: $page;
+
+      &_image {
+        border: 2px solid $white;
+        margin-bottom: 20px;
+      }
+
+      &_heading {
+        @include fontProperty(null, 22px, null, 700);
+        text-transform: capitalize;
+      }
+
+      &_date { @include fontProperty(null, 14px, null, 600); }
+
+      &_page {
+        color: $text-highlight;
+        text-transform: uppercase;
+      }
+
+      &_paragraph {
+        margin-top: 20px;
+        color: $text-color;
+        @include fontProperty(null, null, null, 600, 1.5);
+      }
+
+      &_link_cta {
+        width: 53%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin-top: 33px;
+        background-color: $white;
+        color: $text-color;
+        @include fontProperty(null, null, null, 900);
+        text-transform: uppercase;
+      }
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+
+      .page__content_paragraph { margin-top: 0; }
+    }
+  }
+}
 // pages section ended here
