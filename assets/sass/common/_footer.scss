@@ -5,7 +5,7 @@ footer {
   .wrapper { width: 100%; }
 
   .footer-top {
-    padding: 33px 0;
+    padding: 33px 0 18px;
     @include flexBox(flex, null, null, null, null, center);
     background-color: $border;
 
@@ -24,13 +24,28 @@ footer {
 
         .footer-top__content_list {
           @include flexBox(flex, null, center);
+          position: relative;
+          
+          &_link {
+            padding: 15px 0 18px;
+            border-bottom: 2px dotted transparent;
 
-          &_link { padding: 11px 0 21px; }
+            &::before {
+              content: '';
+              width: 50%;
+              border-bottom: 2px dotted $footer-text;
+              position: absolute;
+              bottom: 0;
+            }
+
+          }
+
+          &:last-child .footer-top__content_list_link::before { border: none; }
 
           &::before {
             color: $white;
             @include flexBasis(15%);
-            @include fontProperty('FontAwesome', 38px);
+            @include fontProperty('FontAwesome', 34px);
             float: left;
           }
 
@@ -48,10 +63,9 @@ footer {
       &_list {
         &_link {
           padding: 8px 0 11px;
-          border-bottom: 2px dotted $text-color;
+          border-bottom: 2px dotted $footer-text;
           display: block;
-          color: $text-color;
-          @include fontProperty(null, 15px);
+          color: $footer-text;
           text-transform: capitalize;
           @include transition(all .3s ease);
 
