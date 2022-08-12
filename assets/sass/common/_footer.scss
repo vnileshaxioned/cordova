@@ -1,0 +1,15 @@
+footer {
+  background-color: $footer-top;
+  padding: 8px 0;
+
+  .wrapper { width: 100%; }
+
+  .footer-top {
+    @include flexBox(flex, null, null, null, null, center);
+    background-color: $black;
+  }
+
+  .footer-top__list {
+    @include flexBasis(20%);
+  }
+}
