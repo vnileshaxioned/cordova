@@ -182,23 +182,24 @@
 
     &-bottom {
       padding: 20px;
-      @include flexBox(flex);
+      @include flexBox(flex, null, null, null, null, center);
       background-color: $page;
 
       &__social_list_link {
+        color: $white;
         text-indent: -9999px;
 
         &::before{
-          @include fontProperty('FontAwesome');
+          @include fontProperty('FontAwesome', 50px);
           float: right;
           text-indent: 0;
         }
 
         &--twitter::before { content: '\f081'; }
-        &--facebook::before { content: '\f081'; }
-        &--flicker::before { content: '\f081'; }
-        &--stumble-upon::before { content: '\f081'; }
-        &--rss-feed::before { content: '\f081'; }
+        &--facebook::before { content: '\f082'; }
+        &--flicker::before { content: '\f16e'; }
+        &--stumble-upon::before { content: '\f1a3'; }
+        &--rss-feed::before { content: '\f143'; }
       }
     }
   }

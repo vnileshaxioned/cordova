@@ -421,7 +421,35 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  justify-content: center;
   background-color: #161616;
+}
+.pages .page-bottom__social_list_link {
+  color: #fff;
+  text-indent: -9999px;
+}
+.pages .page-bottom__social_list_link::before {
+  font-family: "FontAwesome";
+  font-size: 50px;
+  float: right;
+  text-indent: 0;
+}
+.pages .page-bottom__social_list_link--twitter::before {
+  content: "\f081";
+}
+.pages .page-bottom__social_list_link--facebook::before {
+  content: "\f082";
+}
+.pages .page-bottom__social_list_link--flicker::before {
+  content: "\f16e";
+}
+.pages .page-bottom__social_list_link--stumble-upon::before {
+  content: "\f1a3";
+}
+.pages .page-bottom__social_list_link--rss-feed::before {
+  content: "\f143";
 }
 
 /*# sourceMappingURL=style.css.map */
