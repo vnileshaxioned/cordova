@@ -4,7 +4,7 @@
 
   &__list {
     display: none;
-    border: 20px solid $black;
+    border: 20px solid $border;
 
     &--active {
       display: block;
@@ -25,6 +25,7 @@
       color: $white;
       @include fontProperty(null, 36px);
       text-indent: -9999px;
+      @include transition(all .3s ease);
 
       &::before {
         content: '\f104';
@@ -32,6 +33,8 @@
         float: left;
         text-indent: 0;
       }
+
+      &:hover { background-color: $black; }
     }
 
     &_right {
@@ -91,7 +94,7 @@
     padding: 24px;
     margin: 43px auto 16px;
     @include flexBox(flex);
-    background-color: $black;
+    background-color: $border;
   }
 
   .page {
@@ -100,9 +103,16 @@
     @include flexBasis(31.7%);
 
     &__heading {
-      padding: 12px 20px;
+      padding: 6px 20px;
+      @include flexBox(flex, null, center);
       background: $header-gradient;
       @include fontProperty(null, 26px, null, 700);
+
+      &::before {
+        margin-right: 4%;
+        @include fontProperty('FontAwesome', 42px);
+        float: left;
+      }
     }
 
     &__content {
@@ -119,7 +129,10 @@
         text-transform: capitalize;
       }
 
-      &_date { @include fontProperty(null, 14px, null, 600); }
+      &_date {
+        padding-bottom: 8px;
+        @include fontProperty(null, 14px, null, 600);
+      }
 
       &_page {
         color: $text-highlight;
@@ -141,6 +154,18 @@
         color: $text-color;
         @include fontProperty(null, null, null, 900);
         text-transform: uppercase;
+        @include transition(all .3s ease);
+
+        &::after {
+          content: '\f178';
+          @include fontProperty('FontAwesome', 18px);
+          float: right;
+        }
+
+        &:hover {
+          background-color: $menu-text;
+          color: $white;
+        }
       }
 
       form { margin-top: 13px; }
@@ -155,6 +180,8 @@
         @include fontProperty(null, 18px);
         background-color: $input-background;
         color: $white;
+
+        &::placeholder { color: $white; }
       }
 
       &_form--submit { text-align: right; }
@@ -170,6 +197,18 @@
         @include fontProperty(null, 16px, null, 900);
         text-transform: uppercase;
         text-align: left;
+        @include transition(all .3s ease);
+
+        &::after {
+          content: '\f178';
+          @include fontProperty('FontAwesome', 18px);
+          float: right;
+        }
+
+        &:hover {
+          background-color: $menu-text;
+          color: $white;
+        }
       }
     }
 
@@ -185,23 +224,35 @@
       @include flexBox(flex, null, null, null, null, center);
       background-color: $page;
 
-      &__social_list_link {
-        color: $white;
-        text-indent: -9999px;
+      &__social_list {
+        margin-right: 5%;
 
-        &::before{
-          @include fontProperty('FontAwesome', 50px);
-          float: right;
-          text-indent: 0;
+        &_link {
+          color: $white;
+          text-indent: -9999px;
+          @include transition(all .3s ease);
+  
+          &::before{
+            @include fontProperty('FontAwesome', 50px);
+            float: right;
+            text-indent: 0;
+          }
+  
+          &--twitter::before { content: '\f081'; }
+          &--facebook::before { content: '\f082'; }
+          &--flicker::before { content: '\f16e'; }
+          &--stumble-upon::before { content: '\f1a3'; }
+          &--rss-feed::before { content: '\f143'; }
+          &:hover { color: $menu-text; }
         }
 
-        &--twitter::before { content: '\f081'; }
-        &--facebook::before { content: '\f082'; }
-        &--flicker::before { content: '\f16e'; }
-        &--stumble-upon::before { content: '\f1a3'; }
-        &--rss-feed::before { content: '\f143'; }
+        &:last-child { margin-right: 0; }
       }
     }
+
+    &:nth-child(1) .page__heading::before { content: '\f0ac'; }
+    &:nth-child(2) .page__heading::before { content: '\f086'; }
+    &:nth-child(3) .page__heading::before { content: '\f00c'; }
   }
 }
 // pages section ended here

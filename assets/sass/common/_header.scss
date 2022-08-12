@@ -15,6 +15,7 @@ body { background: $primary-color; }
       &_icon {
         color: $white;
         text-indent: -9999px;
+        @include transition(all .3s ease);
       
         &::before {
           @include fontProperty('FontAwesome', 28px);
@@ -24,6 +25,8 @@ body { background: $primary-color; }
         &--twitter::before { content: '\f081'; }
         &--facebook::before { content: '\f082'; }
         &--rss-feed::before { content: '\f143'; }
+
+        &:hover { color: $menu-text; }
       }
     }
   }
@@ -37,7 +40,9 @@ body { background: $primary-color; }
       padding: 7px 9px;
       border: none;
       border-radius: 12px;
+      outline: none;
       background-color: $black;
+      color: $white;
       @include fontProperty(null, 16px);
     }
   }

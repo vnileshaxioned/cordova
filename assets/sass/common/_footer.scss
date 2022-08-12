@@ -5,11 +5,87 @@ footer {
   .wrapper { width: 100%; }
 
   .footer-top {
+    padding: 33px 0;
     @include flexBox(flex, null, null, null, null, center);
-    background-color: $black;
+    background-color: $border;
+
+    &__list {
+      margin-right: 5.5%;
+      @include flexBasis(12%);
+
+      &_heading {
+        color: $menu-text;
+        @include fontProperty(null, 28px, null, 900);
+      }
+
+      &--info {
+        margin: 0 0 0 4%;
+        @include flexBasis(23%);
+
+        .footer-top__content_list {
+          @include flexBox(flex, null, center);
+
+          &_link { padding: 11px 0 21px; }
+
+          &::before {
+            color: $white;
+            @include flexBasis(15%);
+            @include fontProperty('FontAwesome', 38px);
+            float: left;
+          }
+
+          &:nth-child(1)::before { content: '\f015'; }
+          &:nth-child(2)::before { content: '\f095'; }
+          &:nth-child(3)::before { content: '\f0e0'; }
+        }
+      }
+    }
+
+    &__content {
+      margin-top: 16px;
+      @include flexBox(flex, null, null, column);
+
+      &_list {
+        &_link {
+          padding: 8px 0 11px;
+          border-bottom: 2px dotted $text-color;
+          display: block;
+          color: $text-color;
+          @include fontProperty(null, 15px);
+          text-transform: capitalize;
+          @include transition(all .3s ease);
+
+          &--active::before {
+            content: '>';
+            margin-right: 6%;
+          }
+
+          &:hover { color: $white; }
+        }
+
+        &:last-child .footer-top__content_list_link { border: none; }
+      }
+    }
   }
 
-  .footer-top__list {
-    @include flexBasis(20%);
+  .footer-bottom {
+    width: 87%;
+    margin: 26px auto 20px;
+    @include flexBox(flex, null, null, null, null, flex-end);
+
+    &__list {
+      padding: 0 1%;
+      border-right: 1px solid $text-color;
+
+      &_item {
+        color: $text-color;
+        @include fontProperty(null, 14px);
+        @include transition(all .3s ease);
+
+        &:hover { color: $white; }
+      }
+
+      &:last-child { border: none; }
+    }
   }
 }
