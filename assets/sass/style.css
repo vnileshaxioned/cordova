@@ -1,3 +1,26 @@
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -347,11 +370,58 @@ body {
   font-weight: 900;
   text-transform: uppercase;
 }
+.pages .page__content form {
+  margin-top: 13px;
+}
+.pages .page__content_form_content {
+  width: 86%;
+  padding: 11px 7% 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  outline: none;
+  font-size: 18px;
+  background-color: #8D8D8D;
+  color: #fff;
+}
+.pages .page__content_form--submit {
+  text-align: right;
+}
+.pages .page__content_form_cta {
+  width: 66%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  color: #5D6788;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+}
 .pages .page:nth-child(3n) {
   margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: space-between;
+  -ms-flex-align: space-between;
+  justify-content: space-between;
 }
 .pages .page:nth-child(3n) .page__content_paragraph {
   margin-top: 0;
+}
+.pages .page-bottom {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #161616;
 }
 
 /*# sourceMappingURL=style.css.map */
